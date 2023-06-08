@@ -29,18 +29,15 @@ export const createUser = (req, res) => {
   }
 
   // --- Gender validation
-  if (
-    gender === "" ||
-    gender === null ||
-    gender === NaN ||
-    gender === undefined
-  ) {
+  if (gender === undefined || gender === null || gender === NaN || gender <1 || gender >3) {
     return res.status(400).send({
       msg: "Invalid gender",
       status: "error",
       statusCode: 400,
     });
   }
+
+  
   // --- Description validation
   if (description === undefined || description === "" || description === null) {
     return res.status(400).send({

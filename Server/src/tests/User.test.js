@@ -12,7 +12,7 @@ describe("Controller method: createUser - Test Suite", () => {
       body: {
         firstName: "John",
         lastName: "Doe",
-        gender: 0,
+        gender: 1,
         description: "Lorem ipsum",
         state: "California",
       },
@@ -33,7 +33,7 @@ describe("Controller method: createUser - Test Suite", () => {
       data: {
         firstName: "John",
         lastName: "Doe",
-        gender: 0,
+        gender: 1,
         description: "Lorem ipsum",
         state: "California",
       },
@@ -100,7 +100,7 @@ describe("Controller method: createUser - Test Suite", () => {
       body: {
         firstName: "John",
         lastName: "Doe",
-        gender: "+Hello there... -General Kenobi",
+        gender: undefined,
         description: "Lorem ipsum",
         state: "California",
       },
@@ -122,12 +122,12 @@ describe("Controller method: createUser - Test Suite", () => {
   });
 
   // Case: 6
-  test("Should return an error when gender is different than 0,1 or 2", () => {
+  test("Should return an error when gender is different than 1,2 or 3", () => {
     const req = {
       body: {
         firstName: "John",
         lastName: "Doe",
-        gender: 12,
+        gender: 5,
         description: "Lorem ipsum",
         state: "California",
       },
@@ -154,7 +154,7 @@ describe("Controller method: createUser - Test Suite", () => {
       body: {
         firstName: "John",
         lastName: "Doe",
-        gender: 0,
+        gender: 1,
         description: "",
         state: "California",
       },
@@ -181,7 +181,7 @@ describe("Controller method: createUser - Test Suite", () => {
       body: {
         firstName: "John",
         lastName: "Doe",
-        gender: 0,
+        gender: 1,
         description: "Lorem ipsum",
         state: "",
       },
@@ -289,7 +289,7 @@ describe("Controller method: createUser - Test Suite", () => {
       body: {
         firstName: "John",
         lastName: "Doe",
-        gender: 0,
+        gender: 1,
         description: null,
         state: "California",
       },
@@ -315,7 +315,7 @@ describe("Controller method: createUser - Test Suite", () => {
       body: {
         firstName: "John",
         lastName: "Doe",
-        gender: 0,
+        gender: 1,
         description: "Lorem ipsum",
         state: null,
       },
