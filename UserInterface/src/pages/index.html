@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS files import -->
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <!-- Javascript scripts import -->
+    <script src="../scripts/main.js"></script>
+    <title>Mitek TestingEvaluation</title>
+  </head>
+  <body>
+    <div class="general-container">
+      <div class="form-container">
+        <form
+          id="registrationForm"
+          method="POST"
+          onsubmit="validateForm(event)"
+        >
+          <h1 id="form-title" class="form-title">Registration form</h1>
+          <div class="form-field">
+            <label id="firstNameLabel" for="firstName">First name:</label>
+            <input
+              type="text"
+              id="firstNameInput"
+              name="firstName"
+              placeholder="Type your first name"
+              required
+            />
+          </div>
+          <div class="form-field">
+            <label id="lastNameLabel" for="lastName">Last name:</label>
+            <input
+              type="text"
+              id="lastNameInput"
+              name="lastName"
+              placeholder="Type your last name"
+              required
+            />
+          </div>
+          <div class="form-gender-field">
+            <label id="selectGenderLabel" for="genderTitle"
+              >Select gender:
+            </label>
+
+            <div class="gender-options">
+              <div>
+                <label id="genderMaleOptionLabel" for="maleGender">Male</label>
+                <input
+                  type="checkbox"
+                  id="inputMaleGenderOption"
+                  name="genderOption"
+                  value="0"
+                  onclick="checkBoxEvaluation(this)"
+                />
+              </div>
+              <div>
+                <label id="genderFemaleOptionLabel" for="femaleGender"
+                  >Female</label
+                >
+                <input
+                  type="checkbox"
+                  id="inputFemaleGenderOption"
+                  name="genderOption"
+                  value="1"
+                  onclick="checkBoxEvaluation(this)"
+                />
+              </div>
+              <div>
+                <label id="genderOtherOptionLabel" for="otherGender"
+                  >Other</label
+                >
+                <input
+                  type="checkbox"
+                  id="inputOtherGenderOption"
+                  name="genderOption"
+                  value="2"
+                  onclick="checkBoxEvaluation(this)"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-area-field">
+            <label id="descriptionLabel" for="description">Description: </label>
+            <textarea
+              title="Description"
+              id="descriptionTextArea"
+              name="descriptionTextArea"
+              placeholder="Type in a short description about yourself..."
+              required
+            ></textarea>
+          </div>
+          <div class="form-select-field">
+            <label for="countriesSelectList" id="countriesSelectListLabel"
+              >Select a state:</label
+            >
+            <select
+              name="countriesSelectList"
+              id="countriesSelectList"
+              required
+            >
+              <option disabled selected value="">Select state</option>
+            </select>
+          </div>
+          <div class="form-submit-button">
+            <input
+              id="submitButton"
+              class="submitButton"
+              type="Submit"
+              value="Submit"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      fillCountriesSelectList();
+    </script>
+  </body>
+</html>
