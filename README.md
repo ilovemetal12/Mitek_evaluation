@@ -1,5 +1,11 @@
 <!-- -------------------------------------------------------------------- -->
 
+Project structure:
+UserInterface: Holds the front-end, the e2e testing files
+Server: Holds the back-end and the unit testing files
+
+<!-- -------------------------------------------------------------------- -->
+
 Installed dependencies:
 Server:
 -Node
