@@ -2,7 +2,7 @@
 // In order to use webpack
 
 // Countries list
-export const countries = [
+const countries = [
   {
     State: "Alabama",
     Code: "AL",
@@ -206,7 +206,7 @@ export const countries = [
 ];
 
 // ---This function is used to fill the countries select list---
-export function fillCountriesSelectList() {
+function fillCountriesSelectList() {
   let select = document.getElementById("countriesSelectList");
   countries.forEach((country) => {
     const option = document.createElement("option");
@@ -222,7 +222,7 @@ export function fillCountriesSelectList() {
 // -------------------------------------------------------------//
 // formGenderValidator
 
-export function checkBoxEvaluation(checkbox) {
+function checkBoxEvaluation(checkbox) {
   let genderCheckboxes = document.getElementsByName("genderOption");
   if (!genderCheckboxes) {
     alert(
@@ -239,7 +239,7 @@ export function checkBoxEvaluation(checkbox) {
 // ---This function is used to validate the form
 // -------------------------------------------------------------//
 
-export function validateForm(event) {
+function validateForm(event) {
   event.preventDefault();
   // Obtain the form element by ID
   let form = document.getElementById("registrationForm");
@@ -314,3 +314,10 @@ export function validateForm(event) {
 
   return true;
 }
+
+module.exports = {
+  fillCountriesSelectList,
+  checkBoxEvaluation,
+  validateForm,
+  countries,
+};
