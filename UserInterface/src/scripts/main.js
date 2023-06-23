@@ -2,7 +2,7 @@
 // In order to use webpack
 
 // Countries list
-const countries = [
+export const countries = [
   {
     State: "Alabama",
     Code: "AL",
@@ -206,7 +206,7 @@ const countries = [
 ];
 
 // ---This function is used to fill the countries select list---
-function fillCountriesSelectList() {
+export function fillCountriesSelectList() {
   let select = document.getElementById("countriesSelectList");
   countries.forEach((country) => {
     const option = document.createElement("option");
@@ -222,8 +222,13 @@ function fillCountriesSelectList() {
 // -------------------------------------------------------------//
 // formGenderValidator
 
-function checkBoxEvaluation(checkbox) {
+export function checkBoxEvaluation(checkbox) {
   let genderCheckboxes = document.getElementsByName("genderOption");
+  if (!genderCheckboxes) {
+    alert(
+      "There was a problem loading the checkboxes, please reload the page."
+    );
+  }
   genderCheckboxes.forEach(function (element) {
     if (element !== checkbox) {
       element.checked = false;
@@ -234,7 +239,7 @@ function checkBoxEvaluation(checkbox) {
 // ---This function is used to validate the form
 // -------------------------------------------------------------//
 
-function validateForm(event) {
+export function validateForm(event) {
   event.preventDefault();
   // Obtain the form element by ID
   let form = document.getElementById("registrationForm");
@@ -243,7 +248,7 @@ function validateForm(event) {
   let firstName = form.elements["firstName"].value;
   let lastName = form.elements["lastName"].value;
   let genderOption = parseInt(
-    form.querySelector('input[name="genderOption"]:checked').value
+    form.querySelector('input[name="genderOption"]:checked')?.value
   );
   let description = form.elements["descriptionTextArea"].value;
   let state = form.elements["countriesSelectList"].value;
@@ -265,7 +270,7 @@ function validateForm(event) {
     return false;
   }
 
-  if (description === "") {
+  if (description === "" || description === null || description === undefined) {
     alert("Please enter a description about yourself.");
     return false;
   }
@@ -286,7 +291,7 @@ function validateForm(event) {
 
   // We send the data to the server
 
-  fetch("http://localhost:3000/user", {
+  fetch("http://ec2-184-72-82-44.compute-1.amazonaws.com/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

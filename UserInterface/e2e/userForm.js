@@ -2,8 +2,7 @@ import puppeteer from "puppeteer";
 
 // Apologies by hand because the UI is looking pretty ugly at testing browser
 
-// It is really important to replace this urlPage variable with the index.html relative path of your project, because it's local
-const fileUrl = "http://127.0.0.1:5500/UserInterface/src/pages/index.html";
+const fileUrl = "http://mitek.evaluation.com.s3-website-us-east-1.amazonaws.com/";
 
 // Values mockup to test
 const dataMockup = {
