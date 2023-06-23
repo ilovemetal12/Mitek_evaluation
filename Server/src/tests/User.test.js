@@ -1,12 +1,12 @@
 import { createUser } from "../controllers/User.controller";
 
 describe("Controller method: createUser - Test Suite", () => {
-  // Case: 1
+  // Scenario: 1
   test("Should exist and should be a POST service", () => {
     expect(createUser).toBeDefined();
   });
 
-  //   Case: 2
+  // Scenario: 2
   test("Should return a success response with correct data", () => {
     const req = {
       body: {
@@ -40,7 +40,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  // Case: 3
+  // Scenario: 3
   test("Should return an error when firstName is an empty string", () => {
     const req = {
       body: {
@@ -67,7 +67,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  // Case: 4
+  // Scenario: 4
   test("Should return an error when lastName is an empty string", () => {
     const req = {
       body: {
@@ -94,7 +94,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  // Case: 5
+  // Scenario: 5
   test("Should return an error when gender is not a number", () => {
     const req = {
       body: {
@@ -121,7 +121,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  // Case: 6
+  // Scenario: 6
   test("Should return an error when gender is different than 1,2 or 3", () => {
     const req = {
       body: {
@@ -148,7 +148,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  //   Case: 7
+  //   Scenario: 7
   test("Should return an error when description is an empty string", () => {
     const req = {
       body: {
@@ -175,7 +175,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  //   Case: 8
+  //   Scenario: 8
   test("Should return an error when state is an empty string", () => {
     const req = {
       body: {
@@ -202,7 +202,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  //   Case: 9
+  //   Scenario: 9
   test("Should return an error when firstName is a null value", () => {
     const req = {
       body: {
@@ -229,7 +229,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  //   Case: 10
+  //   Scenario: 10
   test("Should return an error when lastName is a null value", () => {
     const req = {
       body: {
@@ -256,7 +256,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  //   Case: 11
+  //   Scenario: 11
   test("Should return an error when gender is a null value", () => {
     const req = {
       body: {
@@ -283,7 +283,7 @@ describe("Controller method: createUser - Test Suite", () => {
     });
   });
 
-  //   Case: 12
+  //   Scenario: 12
   test("Should return an error when description is a null value", () => {
     const req = {
       body: {
@@ -309,7 +309,7 @@ describe("Controller method: createUser - Test Suite", () => {
       statusCode: 400,
     });
   });
-  //   Case: 13
+  //   Scenario: 13
   test("Should return an error when state is a null value", () => {
     const req = {
       body: {

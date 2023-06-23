@@ -2,6 +2,7 @@ import {
   fillCountriesSelectList,
   checkBoxEvaluation,
   validateForm,
+  countries,
 } from "../scripts/main";
 
 // -------------------------------------------------------------//
@@ -9,7 +10,13 @@ import {
 // -------------------------------------------------------------//
 
 describe("Function evaluation: fillCountriesSelectList", () => {
-  test("Scenario 1: Adds new options to the countries list without removing existing ones", () => {
+  // Scenario 1
+  test("Scenario 1: Verifies that the 'countries' array is not empty", () => {
+    expect(countries.length).toBeGreaterThan(0);
+  });
+
+  // Scenario: 2
+  test("Scenario 2: Adds new options to the countries list without removing existing ones", () => {
     // Setting environment for the test
     document.body.innerHTML = `
           <select id="countriesSelectList">
@@ -20,9 +27,9 @@ describe("Function evaluation: fillCountriesSelectList", () => {
     // Calling function
     fillCountriesSelectList();
 
-    // Verify that the new options have been added without removing the existing ones
+    // Verify that the new options have been added without affecting the existing ones
     const selectList = document.getElementById("countriesSelectList");
-    expect(selectList.options.length).toBe(51); // Verify that there are 51 options in total (50 + 1)
+    expect(selectList.options.length).toBe(51); // Verify that there are 51 options in total (previousLength(50) + 1)
     expect(selectList.options[0].value).toBe("NY - New York"); // Verify that the existing option is preserved
   });
 });
@@ -31,6 +38,7 @@ describe("Function evaluation: fillCountriesSelectList", () => {
 // ---Function evaluation: checkBoxEvaluation
 // -------------------------------------------------------------//
 describe("Function evaluation: checkBoxEvaluation", () => {
+  // Scenario: 1
   test("Scenario 1: At least one checkbox is selected", () => {
     // Set up the necessary environment for the test
     document.body.innerHTML = `
@@ -54,6 +62,7 @@ describe("Function evaluation: checkBoxEvaluation", () => {
     });
   });
 
+  // Scenario: 2
   test("Scenario 2: No checkbox is selected", () => {
     // Set up the necessary environment for the test
     document.body.innerHTML = `
@@ -77,8 +86,8 @@ describe("Function evaluation: checkBoxEvaluation", () => {
 // ---Function evaluation: validateForm
 // -------------------------------------------------------------//
 describe("Function evaluation: validateForm", () => {
+  // Set up the necessary environment for the test
   beforeEach(() => {
-    // Set up the necessary environment for the test
     document.body.innerHTML = `
           <form id="registrationForm">
             <label for="firstNameInput">First Name:</label>
@@ -101,6 +110,7 @@ describe("Function evaluation: validateForm", () => {
         `;
   });
 
+  // Scenario: 1
   test("Scenario 1: Displays an alert if the firstname field is blank", () => {
     //Creating spy to catch the window alert
     const alertSpy = jest.spyOn(window, "alert").mockImplementation(() => {});
@@ -120,7 +130,7 @@ describe("Function evaluation: validateForm", () => {
     //Removing spy
     alertSpy.mockRestore();
   });
-
+  // Scenario: 2
   test("Scenario 2: Displays an alert if the lastname field is blank", () => {
     //Creating spy to catch the window alert
     const alertSpy = jest.spyOn(window, "alert").mockImplementation(() => {});
@@ -140,6 +150,7 @@ describe("Function evaluation: validateForm", () => {
     alertSpy.mockRestore();
   });
 
+  // Scenario: 3
   test("Scenario 3: Displays an alert if no gender option is selected", () => {
     //Creating spy to catch the window alert
     const alertSpy = jest.spyOn(window, "alert").mockImplementation(() => {});
@@ -159,6 +170,7 @@ describe("Function evaluation: validateForm", () => {
     alertSpy.mockRestore();
   });
 
+  // Scenario: 4
   test("Scenario 4: Displays an alert if the description field is blank", () => {
     //Creating spy to catch the window alert
     const alertSpy = jest.spyOn(window, "alert").mockImplementation(() => {});
@@ -176,6 +188,7 @@ describe("Function evaluation: validateForm", () => {
     expect(result).toBe(false);
   });
 
+  // Scenario: 5
   test("Scenario 5: Displays an alert if no state is selected", () => {
     //Creating spy to catch the window alert
     const alertSpy = jest.spyOn(window, "alert").mockImplementation(() => {});
