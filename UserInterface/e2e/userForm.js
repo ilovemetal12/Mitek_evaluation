@@ -2,7 +2,8 @@ import puppeteer from "puppeteer";
 
 // Apologies by hand because the UI is looking pretty ugly at testing browser
 
-const fileUrl = "http://mitek.evaluation.com.s3-website-us-east-1.amazonaws.com/";
+const fileUrl =
+  "http://mitek.evaluation.com.s3-website-us-east-1.amazonaws.com/";
 
 // Values mockup to test
 const dataMockup = {
@@ -53,8 +54,11 @@ const dataMockup = {
   await page.click("#submitButton");
 
   // -------------------------------------------------------------------------//
-  //   I commented this line to watch the proccess, but, if you don't need
-  //   you can remove the comment
 
-  //   await browser.close();
+  setTimeout(() => {
+    return process.exit(0);
+  }, 7000);
+
+  // I commented the broswerClose in order to see the result of the test
+  // await browser.close();
 })();
