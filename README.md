@@ -22,7 +22,7 @@ Server:
 Commands:
 npm install
 npm test
-npm run test:e2eÇ
+npm run test:e2e
 npx webpack
 
 <!-- -------------------------------------------------------------------- -->
