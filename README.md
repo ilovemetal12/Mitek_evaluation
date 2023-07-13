@@ -19,10 +19,11 @@ Server:
 
 <!-- -------------------------------------------------------------------- -->
 
-Start de server command: npm run dev
-Jest testing command: npm test
-Puppeteer testing command: npm run test:e2e
-Webpack command: npx webpack
+Commands:
+npm install
+npm test
+npm run test:e2eÇ
+npx webpack
 
 <!-- -------------------------------------------------------------------- -->
 
